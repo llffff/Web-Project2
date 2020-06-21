@@ -114,22 +114,15 @@
                     </div>
 
 
-                    <form method="post" class="upload-form">
+                    <form method="post" class="upload-form" enctype="multipart/form-data">
                         <div class="upload_file">
-                            <input type="button" class="btn btn-default" id="upload_button" onclick="input.click();"
-                                   value="上传图片">
+
                             <input type="file" style="display: none;" id="upload_file"
                                    <?php if (!isset($_GET['iid'])) { ?>required <?php } ?>name="path"
                                    accept="image/*"><br>
                             <div id="image_div">图片未上传</div>
-
-                            <?php
-                            //}else{
-                            ?>
-                            <!--div id="image_div">图片未上传</div-->
-                            <?php
-                            //}
-                            ?>
+                            <input type="button" class="btn btn-default" id="upload_button" onclick="input.click();"
+                                   value="上传图片">
 
                         </div>
                         <hr/>
@@ -183,7 +176,7 @@
                         <!--input class="full-length form-control" type="text" class="normal" name="content"><br-->
                         <hr/>
                         <input type="submit" class="btn btn-default" name="submit" value="
-                         <?php if (!isset($_GET['iid']))  echo "上传"; else echo "修改"; ?>
+                         <?php if (!isset($_GET['iid'])) echo "上传"; else echo "修改"; ?>
                         ">
                     </form>
                 </div>
